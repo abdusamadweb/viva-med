@@ -1,0 +1,70 @@
+@use "src/scss" as *;
+
+.login {
+  color: #282C32;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  
+  &__imgs {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-inline: 2rem;
+    background: #fafbfc;
+  }
+
+  &__titles {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .title {
+      font-weight: 600;
+      font-size: 40px;
+      margin-bottom: 1rem;
+    }
+    .desc {
+      font-weight: 500;
+      font-size: 18px;
+      color: $txt-color;
+    }
+  }
+
+  &__form {
+
+    .txt {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 10px;
+
+      .red {
+        color: #ff0000;
+      }
+    }
+
+    .my-input {
+      margin-bottom: 1rem;
+    }
+
+    .my-button {
+      max-height: 54px;
+      width: 100%;
+      height: 100%;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 1;
+      padding: 1rem;
+      border-radius: 12px;
+      color: #fff;
+      background: $main-color;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

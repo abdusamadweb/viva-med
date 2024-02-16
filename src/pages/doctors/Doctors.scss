@@ -1,0 +1,36 @@
+@use "src/scss" as *;
+
+.doctors {
+
+  &__head {
+    margin-bottom: 1.5rem;
+
+    .my-input {
+
+      .inp {
+        font-size: 15px;
+        padding: 12px 2rem 12px 1rem;
+        border-radius: 15px;
+        border: none;
+      }
+
+      i {
+        right: 4px;
+      }
+    }
+
+    .my-button {
+      width: 70%;
+      font-weight: 400;
+      font-size: 15px;
+      padding: 12px 1rem;
+      border-radius: 15px;
+    }
+  }
+  
+  &__content {
+    padding: 1rem;
+    border-radius: 15px;
+    background: #fff;
+  }
+}

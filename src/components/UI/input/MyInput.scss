@@ -1,0 +1,25 @@
+@use "src/scss" as *;
+
+.my-input {
+  position: relative;
+
+  .inp {
+    padding: 1rem 2rem 1rem 1rem;
+    border-radius: 12px;
+    border: 2px solid #e4e4e4;
+    color: #565D6A;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: $main-color;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translate(-50%, -50%);
+  }
+}
