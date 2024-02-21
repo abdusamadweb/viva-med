@@ -9,6 +9,10 @@ body {
 }
 
 .page {
-  padding-block: 1rem;
+  padding-top: 1rem;
   margin-left: $header-width;
+}
+
+.loading {
+  padding: 1rem;
 }

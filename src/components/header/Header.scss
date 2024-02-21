@@ -9,7 +9,7 @@
 
   padding-block: 1.4rem;
   border-right: 1px solid #f3f3f3;
-  background: #fff;
+  background: $main-color;
 
   .container {
     padding-inline: 1rem;
@@ -37,13 +37,13 @@
       gap: 12px;
       padding: 14px 1rem;
       border-radius: 15px;
-      color: $gray-color;
+      color: #fff;
       background: transparent;
       transition: color 0.3s ease,
       background-color 0.3s ease;
 
       &:hover {
-        background: #fafdfd;
+        background: #32b8c9;
       }
 
       &.active {
@@ -55,8 +55,8 @@
     &__txt {
       font-weight: 500;
       font-size: 14px;
-      text-transform: uppercase;
       margin-bottom: 12px;
+      color: #fff;
     }
 
     &__list {

@@ -1,7 +1,8 @@
 import './Header.scss'
 import React from 'react'
 import {Link, useHref} from "react-router-dom"
-import Nav from "./Nav.tsx";
+import Nav from "./Nav.tsx"
+import logo from '../../assets/images/logo.svg'
 
 const Header: React.FC = () => {
 
@@ -13,7 +14,7 @@ const Header: React.FC = () => {
             <div className="container">
                 <div className="header__inner">
                     <Link className='header__logo' to='/'>
-                        <h1 className='txt'>Viva</h1>
+                        <img className='img' src={logo} alt="site-logo"/>
                     </Link>
 
                     <Nav />

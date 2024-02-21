@@ -4,7 +4,8 @@
   position: relative;
 
   .inp {
-    padding: 1rem 2rem 1rem 1rem;
+    font-weight: 500;
+    padding: 1rem;
     border-radius: 12px;
     border: 2px solid #e4e4e4;
     color: #565D6A;
@@ -13,6 +14,10 @@
 
     &:focus {
       border-color: $main-color;
+    }
+    &::placeholder {
+      font-weight: 400;
+      color: $gray-color;
     }
   }
 

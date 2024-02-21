@@ -5,7 +5,7 @@ import loginImg from '../../assets/images/login-img.png'
 import {Button} from 'antd'
 import {useMutation, UseMutationOptions} from "react-query"
 import {AxiosResponse} from 'axios'
-import $api from '../../api'
+import $api from '../../api/apiConfig.ts'
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 
@@ -32,17 +32,19 @@ const Login: React.FC = () => {
         (item) => $api.post('/base/login/', item),
         {
             onSuccess: (res) => {
-                localStorage.setItem('token', res.data.access)
+                localStorage.setItem('token', `Bearer ${res.data.access}`)
                 localStorage.setItem('loginParams', JSON.stringify(res.data))
 
                 toast.success('Success! Now you are navigating . . .')
-                setLoading(false)
 
-                setTimeout(() => navigate('/'), 1000)
+                setTimeout(() => {
+                    setLoading(false)
+                    navigate('/')
+                }, 1500)
             },
             onError: (err) => {
                 if (err.response) {
-                    toast.error(err.response.data.non_field_errors?.map((i) => i))
+                    toast.error(err.response.data.non_field_errors?.map((i: string) => i))
                 } else if (err.request) {
                     toast.error('Request error. Please try again.')
                 } else {
@@ -79,7 +81,6 @@ const Login: React.FC = () => {
                         <div>
                             <span className='txt'>User name <span className='red'>*</span></span>
                             <MyInput
-                                name={'userName'}
                                 type={'text'}
                                 placeHolder={'User name . . .'}
                                 required={true}
@@ -91,7 +92,6 @@ const Login: React.FC = () => {
                         <div>
                             <span className='txt'>Password <span className='red'>*</span></span>
                             <MyInput
-                                name={'password'}
                                 type={'password'}
                                 placeHolder={'Password . . .'}
                                 required={true}
@@ -107,7 +107,7 @@ const Login: React.FC = () => {
                             htmlType={"submit"}
                             loading={loading}
                         >
-                            Click me!
+                            Submit
                         </Button>
                     </form>
                 </div>

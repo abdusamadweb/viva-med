@@ -5,6 +5,7 @@ import React from 'react'
 interface MyInputProps {
     value: string
     setValue: (value: string) => void
+    name: string
     type: string
     placeHolder: string
     required: boolean
@@ -12,7 +13,7 @@ interface MyInputProps {
 }
 
 
-const MyInput: React.FC<MyInputProps> = ({ value, setValue, type, placeHolder, required, icon }) => {
+const MyInput: React.FC<MyInputProps> = ({ value, setValue, name, type, placeHolder, required, icon }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
@@ -22,12 +23,14 @@ const MyInput: React.FC<MyInputProps> = ({ value, setValue, type, placeHolder, r
     return (
         <label className='my-input'>
             <input
-                className='inp'
+                className={`inp ${icon ? 'pr2' : ''}`}
+                name={name}
                 type={type}
                 placeholder={placeHolder}
                 required={required}
                 value={value}
                 onChange={handleChange}
+                autoComplete='readonly'
             />
             { icon }
         </label>

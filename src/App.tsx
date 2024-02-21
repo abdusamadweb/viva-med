@@ -12,6 +12,8 @@ import RequireAuth from "./components/RequireAuth.tsx";
 import Login from "./pages/login/Login.tsx";
 import {Toaster} from "react-hot-toast";
 import Doctors from "./pages/doctors/Doctors.tsx";
+import HeaderTop from "./components/header-top/HeaderTop.tsx";
+import {LangProvider} from "./context/LangProvider.tsx";
 
 
 // page scroll to X:0 Y:0
@@ -35,24 +37,29 @@ const App: React.FC = () => {
         <BrowserRouter>
           <Wrapper>
 
-            <Header />
+            <LangProvider>
 
-            <Routes>
+              <Header />
+              <HeaderTop />
 
-              <Route path='/login' element={<Login />} />
+              <Routes>
 
-              {/* Protect-able routes */}
-              <Route element={<RequireAuth />}>
+                <Route path='/login' element={<Login />} />
 
-                <Route path='/' element={<Home />} />
-                <Route path='/doctors' element={<Doctors />} />
+                {/* Protect-able routes */}
+                <Route element={<RequireAuth />}>
 
-              </Route>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/doctors' element={<Doctors />} />
 
-              {/* Page 404 */}
-              <Route path='*' element={<Page404 />} />
+                </Route>
 
-            </Routes>
+                {/* Page 404 */}
+                <Route path='*' element={<Page404 />} />
+
+              </Routes>
+
+            </LangProvider>
 
             <Toaster
                 containerClassName="toast"

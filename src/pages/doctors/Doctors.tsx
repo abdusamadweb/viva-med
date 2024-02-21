@@ -2,10 +2,14 @@ import './Doctors.scss'
 import React, {useState} from 'react'
 import MyInput from "../../components/UI/input/MyInput.tsx";
 import MyButton from "../../components/UI/button/MyButton.tsx";
+import DoctorsTable from "./DoctorsTable.tsx";
 
 const Doctors: React.FC = () => {
 
     const [search, setSearch] = useState('')
+
+    const [addModal, setAddModal] = useState(false)
+    const [delModal, setDelModal] = useState(false)
 
 
     return (
@@ -16,6 +20,7 @@ const Doctors: React.FC = () => {
                         <h2 className="title">Doktorlar jadvali</h2>
                         <div className='d-flex align-center g1'>
                             <MyInput
+                                name={'search'}
                                 type={'text'}
                                 placeHolder={'Search'}
                                 required={false}
@@ -23,12 +28,16 @@ const Doctors: React.FC = () => {
                                 setValue={setSearch}
                                 icon={<i className="fa-solid fa-magnifying-glass"/>}
                             />
-                            <MyButton txt={'+ Doktor qoshish'} />
+                            <MyButton txt={'+ Doktor qoshish'} setValue={setAddModal} />
                         </div>
                     </div>
-                    <div className="doctors__content">
-
-                    </div>
+                    <DoctorsTable
+                        search={search}
+                        addModal={addModal}
+                        setAddModal={setAddModal}
+                        delModal={delModal}
+                        setDelModal={setDelModal}
+                    />
                 </div>
             </div>
         </div>

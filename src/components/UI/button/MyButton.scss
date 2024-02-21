@@ -10,10 +10,12 @@
   padding: 1rem;
   border-radius: 12px;
   color: #fff;
-  background: $main-color;
-  transition: opacity 0.2s ease;
+  background: $secondary-color;
+  transition: opacity 0.2s ease,
+  background-color 0.2s ease;
 
   &:hover {
+    background: $main-color;
     opacity: 0.8;
   }
 }

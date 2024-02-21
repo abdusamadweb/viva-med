@@ -9,4 +9,12 @@ const $api = axios.create({
     }
 })
 
+export const $apiT = axios.create({
+    baseURL: API_URL,
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem('token')
+    }
+})
+
 export default $api
