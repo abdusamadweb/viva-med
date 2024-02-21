@@ -62,6 +62,7 @@ const DoctorsTable: React.FC<Props> = ({ search, addModal, setAddModal, delModal
         doctorsAPI.getDoctors,
         {
             keepPreviousData: true,
+            refetchOnWindowFocus: false
         }
     )
 
@@ -189,12 +190,27 @@ const DoctorsTable: React.FC<Props> = ({ search, addModal, setAddModal, delModal
         setAddModal(false)
         setAction('')
 
-        setUsername('')
-        setPhone_number('')
-        setName('')
-        setSurname('')
-        setMiddle_name('')
-        setBirthday('')
+        // setUsername('')
+        // setPassword('')
+        // setPhone_number('')
+        // setPhone_number_2('')
+        // setName('')
+        // setSurname('')
+        // setMiddle_name('')
+        // setBirthday('')
+        // setCountry('')
+        // setRegion('')
+        // setDistrict('')
+        // setQuarter('')
+        // setGender('')
+        // setPassport_seria('')
+        // setPassport_number('')
+        // setPassport_data('')
+        // setProfession('')
+        // setPercent('')
+        // setCategory('')
+        // setUser_permissions([])
+        // setGroups([])
     }
 
 
@@ -258,53 +274,50 @@ const DoctorsTable: React.FC<Props> = ({ search, addModal, setAddModal, delModal
 
                     <div className="form__body">
                         <FormValidations
-                            formData={{
-                                i: selectedPerson,
-                                username,
-                                password,
-                                phone_number,
-                                phone_number_2,
-                                name,
-                                surname,
-                                middle_name,
-                                birthday,
-                                country,
-                                region,
-                                district,
-                                quarter,
-                                gender,
-                                passport_seria,
-                                passport_number,
-                                passport_data,
-                                profession,
-                                percent,
-                                category,
-                                groups,
-                                user_permissions,
-                            }}
-                            setFormData={{
-                                setUsername,
-                                setPassword,
-                                setPhone_number,
-                                setPhone_number_2,
-                                setName,
-                                setSurname,
-                                setMiddle_name,
-                                setBirthday,
-                                setCountry,
-                                setRegion,
-                                setDistrict,
-                                setQuarter,
-                                setGender,
-                                setPassport_seria,
-                                setPassport_number,
-                                setPassport_data,
-                                setProfession,
-                                setPercent,
-                                setCategory,
-                                setGroups,
-                                setUser_permissions,
-                            }}
+                            i={selectedPerson}
+                            username={username}
+                            password={password}
+                            phone_number={phone_number}
+                            phone_number_2={phone_number_2}
+                            name={name}
+                            surname={surname}
+                            middle_name={middle_name}
+                            birthday={birthday}
+                            country={country}
+                            region={region}
+                            district={district}
+                            quarter={quarter}
+                            gender={gender}
+                            passport_seria={passport_seria}
+                            passport_number={passport_number}
+                            passport_data={passport_data}
+                            profession={profession}
+                            percent={percent}
+                            category={category}
+                            groups={groups}
+                            user_permissions={user_permissions}
+
+                            setUsername={setUsername}
+                            setPassword={setPassword}
+                            setPhone_number={setPhone_number}
+                            setPhone_number_2={setPhone_number_2}
+                            setName={setName}
+                            setSurname={setSurname}
+                            setMiddle_name={setMiddle_name}
+                            setBirthday={setBirthday}
+                            setCountry={setCountry}
+                            setRegion={setRegion}
+                            setDistrict={setDistrict}
+                            setQuarter={setQuarter}
+                            setGender={setGender}
+                            setPassport_seria={setPassport_seria}
+                            setPassport_number={setPassport_number}
+                            setPassport_data={setPassport_data}
+                            setProfession={setProfession}
+                            setPercent={setPercent}
+                            setCategory={setCategory}
+                            setGroups={setGroups}
+                            setUser_permissions={setUser_permissions}
                         />
                         {
                             action === 'show' ? <></>

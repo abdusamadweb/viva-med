@@ -2,7 +2,7 @@ import {$apiT} from "./apiConfig.ts";
 
 export const doctorsAPI = {
     getDoctors: async () => {
-        const { data } = await $apiT.get(`/doctor/list/`)
+        const { data } = await $apiT.get(`/doctor/list/?limit=10&p=1`)
         return data
     },
     addEditDoctor: async (action: string, id: string | number, item: object) => {

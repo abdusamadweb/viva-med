@@ -3,8 +3,8 @@ import React from 'react'
 
 
 interface MyInputProps {
-    value: string
-    setValue: (value: string) => void
+    value: string | number
+    setValue: (value: string | number) => void
     name: string
     type: string
     placeHolder: string

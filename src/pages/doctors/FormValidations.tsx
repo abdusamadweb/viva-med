@@ -8,133 +8,124 @@ import {useQueries, UseQueryOptions} from 'react-query'
 
 
 interface Props {
-    formData: {
-        i: object | null
-        username: string | null
-        password: string | null
-        phone_number: string
-        phone_number_2: string
-        name: string
-        surname: string
-        middle_name: string
-        birthday: string
-        country: string
-        region: string
-        district: string
-        quarter: string
-        gender: string
-        passport_seria: string
-        passport_number: string
-        passport_data: string
-        profession: string
-        percent: string
-        category: string
-        groups: object
-        user_permissions: object
-    }
-    setFormData: {
-        setUsername: React.Dispatch<React.SetStateAction<string>>
-        setPassword: React.Dispatch<React.SetStateAction<string>>
-        setPhone_number: React.Dispatch<React.SetStateAction<string>>
-        setPhone_number_2: React.Dispatch<React.SetStateAction<string>>
-        setName: React.Dispatch<React.SetStateAction<string>>
-        setSurname: React.Dispatch<React.SetStateAction<string>>
-        setMiddle_name: React.Dispatch<React.SetStateAction<string>>
-        setBirthday: React.Dispatch<React.SetStateAction<string>>
-        setCountry: React.Dispatch<React.SetStateAction<string>>
-        setRegion: React.Dispatch<React.SetStateAction<string>>
-        setDistrict: React.Dispatch<React.SetStateAction<string>>
-        setQuarter: React.Dispatch<React.SetStateAction<string>>
-        setGender: React.Dispatch<React.SetStateAction<string>>
-        setPassport_seria: React.Dispatch<React.SetStateAction<string>>
-        setPassport_number: React.Dispatch<React.SetStateAction<string>>
-        setPassport_data: React.Dispatch<React.SetStateAction<string>>
-        setProfession: React.Dispatch<React.SetStateAction<string>>
-        setPercent: React.Dispatch<React.SetStateAction<string>>
-        setCategory: React.Dispatch<React.SetStateAction<string>>
-        setGroups: React.Dispatch<React.SetStateAction<object>>
-        setUser_permissions: React.Dispatch<React.SetStateAction<object>>
-    }
+    i: object | null
+    username: string | null
+    password: string | null
+    phone_number: string
+    phone_number_2: string
+    name: string
+    surname: string
+    middle_name: string
+    birthday: string
+    country: string
+    region: string
+    district: string
+    quarter: string
+    gender: string
+    passport_seria: string
+    passport_number: string
+    passport_data: string
+    profession: string
+    percent: string
+    category: string
+    groups: object
+    user_permissions: object
+
+    setUsername: React.Dispatch<React.SetStateAction<string>>
+    setPassword: React.Dispatch<React.SetStateAction<string>>
+    setPhone_number: React.Dispatch<React.SetStateAction<string>>
+    setPhone_number_2: React.Dispatch<React.SetStateAction<string>>
+    setName: React.Dispatch<React.SetStateAction<string>>
+    setSurname: React.Dispatch<React.SetStateAction<string>>
+    setMiddle_name: React.Dispatch<React.SetStateAction<string>>
+    setBirthday: React.Dispatch<React.SetStateAction<string>>
+    setCountry: React.Dispatch<React.SetStateAction<string>>
+    setRegion: React.Dispatch<React.SetStateAction<string>>
+    setDistrict: React.Dispatch<React.SetStateAction<string>>
+    setQuarter: React.Dispatch<React.SetStateAction<string>>
+    setGender: React.Dispatch<React.SetStateAction<string>>
+    setPassport_seria: React.Dispatch<React.SetStateAction<string>>
+    setPassport_number: React.Dispatch<React.SetStateAction<string>>
+    setPassport_data: React.Dispatch<React.SetStateAction<string>>
+    setProfession: React.Dispatch<React.SetStateAction<string>>
+    setPercent: React.Dispatch<React.SetStateAction<string>>
+    setCategory: React.Dispatch<React.SetStateAction<string>>
+    setGroups: React.Dispatch<React.SetStateAction<object>>
+    setUser_permissions: React.Dispatch<React.SetStateAction<object>>
 }
 
 
-const FormValidations: React.FC<Props> = ({ formData, setFormData }) => {
+const FormValidations: React.FC<Props> = ({
+    i,
+    username,
+    password,
+    phone_number,
+    phone_number_2,
+    name,
+    surname,
+    middle_name,
+    birthday,
+    country,
+    region,
+    district,
+    quarter,
+    gender,
+    passport_seria,
+    passport_number,
+    passport_data,
+    profession,
+    percent,
+    category,
+    groups,
+    user_permissions,
+    setUsername,
+    setPassword,
+    setPhone_number,
+    setPhone_number_2,
+    setName,
+    setSurname,
+    setMiddle_name,
+    setBirthday,
+    setCountry,
+    setRegion,
+    setDistrict,
+    setQuarter,
+    setGender,
+    setPassport_seria,
+    setPassport_number,
+    setPassport_data,
+    setProfession,
+    setPercent,
+    setCategory,
+    setGroups,
+    setUser_permissions
+}) => {
 
     const { lang } = useLang()
-
-    const {
-        i,
-        username,
-        password,
-        phone_number,
-        phone_number_2,
-        name,
-        surname,
-        middle_name,
-        birthday,
-        country,
-        region,
-        district,
-        quarter,
-        gender,
-        passport_seria,
-        passport_number,
-        passport_data,
-        profession,
-        percent,
-        category,
-        groups,
-        user_permissions
-    } = formData
-    const {
-        setUsername,
-        setPassword,
-        setPhone_number,
-        setPhone_number_2,
-        setName,
-        setSurname,
-        setMiddle_name,
-        setBirthday,
-        setCountry,
-        setRegion,
-        setDistrict,
-        setQuarter,
-        setGender,
-        setPassport_seria,
-        setPassport_number,
-        setPassport_data,
-        setProfession,
-        setPercent,
-        setCategory,
-        setGroups,
-        setUser_permissions
-    } = setFormData
 
 
     useEffect(() => {
         if (i) {
-            setFormData({
-                username: i.username,
-                phone_number: i.phone_number,
-                phone_number_2: i.phone_number_2,
-                name: i.name,
-                surname: i.surname,
-                middle_name: i.middle_name,
-                birthday: i.birthday,
-                country: i.country,
-                region: i.region,
-                district: i.district,
-                quarter: i.quarter,
-                gender: i.gender,
-                passport_seria: i.passport_seria,
-                passport_number: i.passport_number,
-                passport_data: i.passport_data,
-                profession: i.profession,
-                percent: i.percent,
-                category: i.category,
-                user_permissions: i.user_permissions,
-                groups: i.groups,
-            })
+            setUsername(i?.username)
+            setPhone_number(i?.phone_number)
+            setPhone_number_2(i?.phone_number_2)
+            setName(i?.name)
+            setSurname(i?.surname)
+            setMiddle_name(i?.middle_name)
+            setBirthday(i?.birthday)
+            setCountry(i?.country)
+            setRegion(i?.region)
+            setDistrict(i?.district)
+            setQuarter(i?.quarter)
+            setGender(i?.gender)
+            setPassport_seria(i?.passport_seria)
+            setPassport_number(i?.passport_number)
+            setPassport_data(i?.passport_data)
+            setProfession(i?.profession)
+            setPercent(i?.percent)
+            setCategory(i?.category)
+            setUser_permissions(i?.user_permissions)
+            setGroups(i?.groups)
         }
     }, [i])
 
@@ -144,15 +135,17 @@ const FormValidations: React.FC<Props> = ({ formData, setFormData }) => {
     const [groupPermissionOption, setGroupPermissionOption] = useState<object>({})
 
     // get all queries in one
+    const queryOptions = { keepPreviousData: true, refetchOnWindowFocus: false }
     const queryConfigurations: UseQueryOptions[] = [
-        { queryKey: ['countries'], queryFn: baseAPI.getCounty },
-        { queryKey: ['regions'], queryFn: baseAPI.getRegion },
-        { queryKey: ['districts'], queryFn: baseAPI.getDistrict },
-        { queryKey: ['quarters'], queryFn: baseAPI.getQuarter },
+        { queryKey: ['countries'], queryFn: baseAPI.getCounty, ...queryOptions },
+        { queryKey: ['regions'], queryFn: baseAPI.getRegion, ...queryOptions },
+        { queryKey: ['districts'], queryFn: baseAPI.getDistrict, ...queryOptions },
+        { queryKey: ['quarters'], queryFn: baseAPI.getQuarter, ...queryOptions },
         // { queryKey: ['categories'], queryFn: benefitCategory.getCategories },
         {
             queryKey: ['permission'],
             queryFn: baseAPI.getPermission,
+            ...queryOptions,
             onSuccess: (res) => {
                 setPermissionOption(res?.map(i => ({
                     ...i,
@@ -164,6 +157,7 @@ const FormValidations: React.FC<Props> = ({ formData, setFormData }) => {
         {
             queryKey: ['group-permission'],
             queryFn: baseAPI.getGroupPermission,
+            ...queryOptions,
             onSuccess: (res) => {
                 setGroupPermissionOption(res?.map(i => ({
                     ...i,
